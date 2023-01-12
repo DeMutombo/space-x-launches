@@ -6,23 +6,19 @@ import GET_NEXT_LAUNCH from "../../../graphql/queries/next-launch";
 import { INextLaung } from "../../../interfaces/next-launch";
 import Image from "next/image";
 
+import placeHolder from "../../../public/images/spacexx-x.png";
+
 const Next: FC<INextLaung> = ({ launchNext }) => {
-  const imageholder = "https://i.imgur.com/Q4JzVA6.jpeg";
   return (
     <>
-      <div className="h-screen">
-        <div className="flex justify-center p-5   ">
-          <Link href={"/"} className="hover:text-cyan-600 text-white text-lg">
-            Home
-          </Link>
-        </div>
-        <div className="flex gap-10 w-[980px] m-auto bg-white shadow-2xl">
+      <div className="h-[95vh] flex justify-center">
+        <div className="flex gap-10 w-[1380px] m-auto bg-white shadow-2xl">
           <div className="relative">
             <Image
               src={
-                launchNext.ships[0] ? launchNext.ships[0].image : imageholder
+                launchNext.ships[0] ? launchNext.ships[0].image : placeHolder
               }
-              width={500}
+              width={1280}
               height={100}
               alt="Launching station"
             />
@@ -30,7 +26,7 @@ const Next: FC<INextLaung> = ({ launchNext }) => {
               Next mission - {launchNext.id}
             </p>
           </div>
-          <div className="p-5">
+          <div className="p-5 relative">
             <h1 className="text-xl font-bold text-center pb-3">
               {launchNext.mission_name}
             </h1>
@@ -50,6 +46,13 @@ const Next: FC<INextLaung> = ({ launchNext }) => {
             </table>
             <p className="font-bold pt-6">Launch Site</p>
             {launchNext.launch_site.site_name_long}
+            <div className="absolute bottom-4">
+              <Link
+                href={"/"}
+                className="bg-green-300 px-4 py-2 text-gray-700 hover:bg-green-700 hover:text-white">
+                Back to home
+              </Link>
+            </div>
           </div>
         </div>
       </div>

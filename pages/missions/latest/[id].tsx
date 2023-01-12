@@ -6,25 +6,24 @@ import GET_LATEST_LAUNCH from "../../../graphql/queries/latest-launch";
 import { ILatestLaunch } from "../../../interfaces/latest-launch";
 import Image from "next/image";
 
+import placeHoder from "../../../public/images/space-x-station.jpeg";
+
 const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
-  const imageholder = "https://i.imgur.com/Q4JzVA6.jpeg";
   return (
     <>
-      <div className="h-screen">
+      <div className="h-[95vh]">
         <div className="flex justify-center p-5   ">
           <Link href={"/"} className="hover:text-cyan-600 text-white text-lg">
             Home
           </Link>
         </div>
-        <div className="flex gap-10 w-[980px] m-auto bg-white shadow-2xl">
+        <div className="flex gap-10 w-[1380px] m-auto bg-white shadow-2xl mt-10">
           <div className="relative">
             <Image
               src={
-                latestLaunch.ships[0]
-                  ? latestLaunch.ships[0].image
-                  : imageholder
+                latestLaunch.ships[0] ? latestLaunch.ships[0].image : placeHoder
               }
-              width={680}
+              width={1280}
               height={100}
               alt=""
             />
@@ -32,7 +31,7 @@ const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
               Latest mission - {latestLaunch.id}
             </p>
           </div>
-          <div className="p-5">
+          <div className="p-5 relative">
             <h1 className="text-xl font-bold text-center pb-3">
               {latestLaunch.mission_name}
             </h1>
@@ -54,7 +53,17 @@ const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
             </table>
             <p className="font-bold pt-6">Launch Site</p>
             {latestLaunch.launch_site.site_name_long}
+            <div className="absolute bottom-4">
+              <Link
+                href={"/"}
+                className="bg-green-300 px-4 py-2 text-gray-700 hover:bg-green-700 hover:text-white">
+                Back to home
+              </Link>
+            </div>
           </div>
+        </div>
+        <div className="flex gap-10 w-[1380px] m-auto text-white font-semibold  shadow-2xl mt-10">
+          ALL MISSIONS
         </div>
       </div>
     </>
