@@ -35,13 +35,15 @@ const Home: React.FC<ILaunchDetails> = ({ latestLaunch, launchNext }) => {
                 <h1 className=" font-semibold text-blue-800 text-xl py-5">
                   Mission Number - {latestLaunch.id}
                 </h1>
-                <p className=" font-semibold text-blue-900 text-3xl pb-5 mb-5">
+                <p
+                  data-testid="last-date"
+                  className=" font-semibold text-blue-900 text-3xl pb-5 mb-5">
                   {new Date(latestLaunch.launch_date_utc).toDateString()}
                 </p>
                 <Link
                   href={`missions/latest/${latestLaunch.id}`}
                   className="text-sm text-gray-500 hover:text-gray-800 bg-blue-100 hover:bg-gray-50 px-2 py-1 shadow-lg rounded-md">
-                  Open Mission ...
+                  Open Past Mission ...
                 </Link>
               </div>
             </div>
@@ -56,13 +58,15 @@ const Home: React.FC<ILaunchDetails> = ({ latestLaunch, launchNext }) => {
                 <p className=" font-semibold text-blue-800 text-xl py-5">
                   Mission Number - {launchNext.id}
                 </p>
-                <p className=" font-semibold text-blue-900 text-3xl pb-5 mb-5">
+                <p
+                  data-testid="next-date"
+                  className=" font-semibold text-blue-900 text-3xl pb-5 mb-5">
                   {new Date(launchNext.launch_date_utc).toDateString()}
                 </p>
                 <Link
                   href={`missions/next/${launchNext.id}`}
                   className="text-sm text-gray-500 hover:text-gray-800 bg-blue-100 hover:bg-gray-50 px-2 py-1 shadow-lg rounded-md">
-                  Open Mission ...
+                  Open Next Mission ...
                 </Link>
               </div>
               <Image
