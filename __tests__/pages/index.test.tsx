@@ -2,7 +2,7 @@ import { getByTestId, render, screen } from "@testing-library/react";
 import Home, { getStaticProps } from "@/pages/index";
 import "@testing-library/jest-dom";
 import graphqlClient from "../../graphql/graphql-client";
-import { ILaunchDetails } from "../../interfaces/launch-detaisl";
+import { ILaunchDetails } from "../../interfaces/launch-details";
 // import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 
 export const TEST_LAUNCHE_QUERY: ILaunchDetails = {

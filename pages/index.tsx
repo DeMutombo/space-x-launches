@@ -5,7 +5,7 @@ import ALL_lAUNCHES from "../graphql/queries/launches";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import Link from "next/link";
-import { ILaunchDetails } from "../interfaces/launch-detaisl";
+import { ILaunchDetails } from "../interfaces/launch-details";
 import placeHoder from "../public/images/space-x-station.jpeg";
 
 const inter = Inter({ subsets: ["latin"] });
