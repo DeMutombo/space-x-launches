@@ -36,3 +36,5 @@ For testing, the app uses Jest which is shipped with React and to run the tests 
 
 
 ## Improvements
+
+Making the app more mobile responsive, implementing test on each page to insure that all the data is loaded and displays correctly. 
