@@ -159,7 +159,7 @@ describe("Test all components of the home page", () => {
     const missionDate = screen.getByTestId("last-date");
     expect(missionDate).toBeInTheDocument();
   });
-  it("Show correct date for last mission", () => {
+  it("Show correct date for Last mission", () => {
     const { getByTestId } = render(
       <Home
         latestLaunch={TEST_LAUNCHE_QUERY.latestLaunch}
@@ -172,6 +172,20 @@ describe("Test all components of the home page", () => {
     expect(missionCorrectDate.textContent).toContain(
       new Date(TEST_LAUNCHE_QUERY.latestLaunch.launch_date_utc).toDateString()
     );
+  });
+  it("Find link to Last mission on page", () => {
+    render(
+      <Home
+        latestLaunch={TEST_LAUNCHE_QUERY.latestLaunch}
+        launchNext={TEST_LAUNCHE_QUERY.launchNext}
+        loading={TEST_LAUNCHE_QUERY.loading}
+      />
+    );
+
+    const missionLink = screen.getByRole("link", {
+      name: "Open Next Mission ...",
+    });
+    expect(missionLink).toBeInTheDocument();
   });
   it("Home page renders the Heading of Next mission", () => {
     const TEST_LAUNCHE_QUERY: ILaunchDetails = {
@@ -307,21 +321,7 @@ describe("Test all components of the home page", () => {
       new Date(TEST_LAUNCHE_QUERY.launchNext.launch_date_utc).toDateString()
     );
   });
-  it("Find link to past mission on page", () => {
-    render(
-      <Home
-        latestLaunch={TEST_LAUNCHE_QUERY.latestLaunch}
-        launchNext={TEST_LAUNCHE_QUERY.launchNext}
-        loading={TEST_LAUNCHE_QUERY.loading}
-      />
-    );
-
-    const missionLink = screen.getByRole("link", {
-      name: "Open Next Mission ...",
-    });
-    expect(missionLink).toBeInTheDocument();
-  });
-  it("Find link to past mission on page", () => {
+  it("Find link to Next mission on page", () => {
     render(
       <Home
         latestLaunch={TEST_LAUNCHE_QUERY.latestLaunch}
