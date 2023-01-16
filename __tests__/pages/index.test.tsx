@@ -55,6 +55,7 @@ export const TEST_LAUNCHE_QUERY: ILaunchDetails = {
 
 describe("Test all components of the home page", () => {
   it("getStatic props returns the past launch and next launch", async () => {
+    // TEST_LAUNCHE_QUERY
     const TEST_LAUNCHE_QUERY: ILaunchDetails = [
       {
         latestLaunch: {
@@ -69,7 +70,7 @@ describe("Test all components of the home page", () => {
       },
     ];
     jest.spyOn(graphqlClient, "query").mockImplementation(async () => ({
-      data: TEST_LAUNCHE_QUERY,
+      data:TEST_LAUNCHE_QUERY,
     }));
 
     const response = await getStaticProps({} as any);

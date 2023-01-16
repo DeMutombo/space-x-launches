@@ -17,7 +17,7 @@ const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
             Home
           </Link>
         </div>
-        <div className="flex gap-10 w-[1380px] m-auto bg-white shadow-2xl mt-10">
+        <div className="flex gap-10 w-[88%] m-auto bg-white shadow-2xl mt-10">
           <div className="relative">
             <Image
               src={
@@ -36,6 +36,7 @@ const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
               {latestLaunch.mission_name}
             </h1>
             <table>
+              <tbody>
               <tr>
                 <td className="font-bold pt-3">Date</td>
                 <td className="px-5">:</td>
@@ -50,6 +51,7 @@ const Next: FC<ILatestLaunch> = ({ latestLaunch }) => {
                 <td className="px-5">:</td>
                 <td>{latestLaunch.rocket.rocket_name}</td>
               </tr>
+              </tbody>
             </table>
             <p className="font-bold pt-6">Launch Site</p>
             {latestLaunch.launch_site.site_name_long}

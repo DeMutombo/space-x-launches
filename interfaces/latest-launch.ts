@@ -21,5 +21,6 @@ export interface ILatestLaunch {
         type: string;
       }
     ];
-  };
+  },
+  loading:boolean
 }

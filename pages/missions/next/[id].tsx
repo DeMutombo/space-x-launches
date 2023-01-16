@@ -12,7 +12,7 @@ const Next: FC<INextLaung> = ({ launchNext }) => {
   return (
     <>
       <div className="h-[95vh] flex justify-center">
-        <div className="flex gap-10 w-[1380px] m-auto bg-white shadow-2xl">
+        <div className="flex gap-10 w-[88%] m-auto bg-white shadow-2xl">
           <div className="relative">
             <Image
               src={
@@ -31,6 +31,7 @@ const Next: FC<INextLaung> = ({ launchNext }) => {
               {launchNext.mission_name}
             </h1>
             <table>
+              <tbody>
               <tr>
                 <td className="font-bold pt-3">Date</td>
                 <td className="px-5">:</td>
@@ -43,6 +44,7 @@ const Next: FC<INextLaung> = ({ launchNext }) => {
                 <td className="px-5">:</td>
                 <td>{launchNext.rocket.rocket_name}</td>
               </tr>
+              </tbody>
             </table>
             <p className="font-bold pt-6">Launch Site</p>
             {launchNext.launch_site.site_name_long}

@@ -2,7 +2,7 @@ export interface ILaunchDetails {
   latestLaunch: {
     id: number;
     details: string;
-    launch_date_utc: Date;
+    launch_date_utc: string;
     launch_site: {
       site_id: string;
       site_name: string;
@@ -25,7 +25,7 @@ export interface ILaunchDetails {
   launchNext: {
     id: number;
     details: string;
-    launch_date_utc: Date;
+    launch_date_utc: string;
     launch_site: {
       site_id: string;
       site_name: string;
@@ -45,4 +45,5 @@ export interface ILaunchDetails {
       }
     ];
   };
+  loading:boolean;
 }

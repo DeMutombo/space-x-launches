@@ -1,7 +1,7 @@
 # Space X Rocket Launch Date
 
-Space-X Launche date is an app that gets you the latest tates the a rocket was launched including pasted launches, failed or successful launch. The launch data is retrieved from the spacex-graph-ql API [https://api.spacex.land/graphql/](https://api.spacex.land/graphql/).
-The home page presents you with two cards, latest launch and next comming launch, when you click on the card it give details of launch.
+Space-X Launche date is an app that gets you the latest dates of rocket launches including pasted, failed or successful launches. The launch data is retrieved from the spacex-graph-ql API [https://api.spacex.land/graphql/](https://api.spacex.land/graphql/).
+The home page presents you with two cards, latest launch and next comming launch, when you click on the card it give details of the launch.
 
 <img src="public/images/screenGrab.png">
 
@@ -31,5 +31,8 @@ For testing, the app uses Jest which is shipped with React and to run the tests 
 ```bash
 - npm test .
 ```
+
+<img src="public/images/test.png">
+
 
 ## Improvements
